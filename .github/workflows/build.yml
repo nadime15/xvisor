@@ -12,6 +12,7 @@ jobs:
             gcc-aarch64-linux-gnu \
             gcc-arm-linux-gnueabihf \
             gcc-x86-64-linux-gnu \
-            gcc-riscv64-linux-gnu
+            gcc-riscv64-linux-gnu \
+            device-tree-compiler
       - name: Build all
         run: tools/scripts/makeall
