@@ -1,4 +1,4 @@
-name: Build
+name: Build All
 on: [push, pull_request]
 jobs:
   build:
@@ -8,6 +8,10 @@ jobs:
       - name: Install toolchains
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-riscv64-linux-gnu
-      - name: Build
-        run: make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -j$(nproc)
+          sudo apt-get install -y \
+            gcc-aarch64-linux-gnu \
+            gcc-arm-linux-gnueabihf \
+            gcc-x86-64-linux-gnu \
+            gcc-riscv64-linux-gnu
+      - name: Build all
+        run: tools/scripts/makeall
