@@ -14,5 +14,9 @@ jobs:
             gcc-x86-64-linux-gnu \
             gcc-riscv64-linux-gnu \
             device-tree-compiler
+      - name: Debug ARM compiler
+        run: |
+          arm-linux-gnueabihf-gcc -print-multi-lib
+          arm-linux-gnueabihf-gcc -v
       - name: Build all
         run: tools/scripts/makeall
